@@ -17,7 +17,6 @@ var cache = make(map[string]string)
 //It checks which api method is called.
 //It writes the data in the cache to the file every 10 seconds
 func Handlers(w http.ResponseWriter, r *http.Request)  {
-
 	switch r.Method {
 	case "GET":
 		Get(w, r)
@@ -48,8 +47,8 @@ func Get(w http.ResponseWriter, r *http.Request) {
 
 	log.Println("Get Key = " + key + "Get Value = " + e)
 
-
 }
+
 func Set(w http.ResponseWriter, r *http.Request) {
 	key := r.FormValue("key")
 	value := r.FormValue("val")
